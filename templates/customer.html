@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body style="background-image:url({% static 'img/intro-bg.jpg' %})";>
+<style>
+    input{color:red;text-align:center;height:30px}
+    label{color:red}
+    h1{text-align:center}
+</style>
+<h1 style="color:red;">Application Form</h1>
+<form action="" method="POST">
+    <div class="login" style="width:500px; margin:0 auto;">
+
+    {% csrf_token %}
+
+  <div class="row">
+    <div class="col-md-12">
+
+        <form name="register" id="register" novalidate>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" class="form-control" required>
+      <option value="">--Select--</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="phonenumber">Phone Number:</label>
+    <input type="tel" id="phonenumber" name="phonenumber" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="mailid">Email:</label>
+    <input type="email" id="mailid" name="mailid" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" class="form-control" required></textarea>
+  </div>
+
+  <div class="form-group" >
+    <label for="district">District:</label>
+    <select id="district" name="district" class="form-control" required>
+      <option value="">--Select--</option>
+      <option value="district1">Ernakulam</option>
+      <option value="district2">kollam</option>
+      <option value="district3">District 3</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="branch">Branch:</label>
+    <select id="branch" name="branch" class="form-control" required>
+
+      <option value="district1">kaloor</option>
+      <option value="district1">aluva</option>
+
+
+      <option value="district2">kayamkulam</option>
+      <option value="district2">anjal</option>
+
+    </select>
+
+
+  </div>
+  <div class="form-group">
+    <label for="accounttype">Account Type:</label>
+    <select id="accounttype" name="accounttype" class="form-control" required>
+      <option value="">--Select--</option>
+      <option value="savings">Savings</option>
+      <option value="current">Current</option>
+      <option value="fixeddeposit">Fixed Deposit</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="materials">Materials Provided:</label>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="materials" name="materials[]" value="passbook"> Debit Card
+      </label>
+        <label>
+        <input type="checkbox" id="materials" name="materials[]" value="passbook"> Credit Card
+      </label>
+       <label>
+        <input type="checkbox" id="materials" name="materials[]" value="passbook"> Checque Book
+      </label>
+    </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-custom btn-lg">Submit</button>
+    <div id="logout"></div>
+        <button type="submit" class="btn btn-custom btn-lg">Logout</button>
+    </div>
+        </form>
+    </div>
+  </div>
+                
+<!-- About Section 
+<div id="about">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 about-img"> </div>
+      <div class="col-xs-12 col-md-3 col-md-offset-1">
+        <div class="about-text">
+          <div class="section-title">
+            <h2>About Us</h2>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- Restaurant Menu Section 
+<div id="restaurant-menu">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Menu</h2>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="menu-section">
+          <h2 class="menu-section-title">Breakfast & Starters</h2>
+          <div class="menu-item">
+            <div class="menu-item-name">Tortellini Skewers</div>
+            <div class="menu-item-price"> $9 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Fried Ravioli</div>
+            <div class="menu-item-price"> $7 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Wild Mushroom Arancini</div>
+            <div class="menu-item-price"> $9 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Mozzarella Sticks</div>
+            <div class="menu-item-price"> $10 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="menu-section">
+          <h2 class="menu-section-title">Main Course</h2>
+          <div class="menu-item">
+            <div class="menu-item-name">Roast Stuffed Chicken</div>
+            <div class="menu-item-price"> $18 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Chicken & Mushroom Pasta</div>
+            <div class="menu-item-price"> $20 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Beef Lasagne</div>
+            <div class="menu-item-price"> $14 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Chicken Goujons</div>
+            <div class="menu-item-price"> $19 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="menu-section">
+          <h2 class="menu-section-title">Dinner</h2>
+          <div class="menu-item">
+            <div class="menu-item-name">Sesame-Ginger Beef</div>
+            <div class="menu-item-price"> $15 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Crispy Fried Chicken</div>
+            <div class="menu-item-price"> $17 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Mongolian Shrimp & Broccoli</div>
+            <div class="menu-item-price"> $18 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam.. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Spicy Coconut Salmon</div>
+            <div class="menu-item-price"> $20 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="menu-section">
+          <h2 class="menu-section-title">Desserts</h2>
+          <div class="menu-item">
+            <div class="menu-item-name">Chocolate Mud Cake</div>
+            <div class="menu-item-price"> $11 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Bourbon-Pecan Tart</div>
+            <div class="menu-item-price"> $14 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Texas Sheet Cake</div>
+            <div class="menu-item-price"> $15 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-name">Vanilla Cheesecake</div>
+            <div class="menu-item-price"> $18 </div>
+            <div class="menu-item-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, duis sed dapibus leo nec ornare diam. </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- Gallery Section 
+<div id="gallery">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <div class="gallery-item"> <img src="{% static 'img/gallery/01.jpg' %}" class="img-responsive" alt=""></div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="gallery-item"> <img src="{% static 'img/gallery/02.jpg' %}" class="img-responsive" alt=""></div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="gallery-item"> <img src="{% static 'img/gallery/03.jpg' %}" class="img-responsive" alt=""></div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="gallery-item"> <img src="{% static 'img/gallery/04.jpg' %}" class="img-responsive" alt=""></div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- Team Section 
+<div id="team">
+  <div class="container">
+    <div id="row">
+      <div class="col-md-6">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="section-title">
+            <h2>Meet Our Chef</h2>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="team-img"><img src="{% static 'img/chef.jpg' %}" alt="..."></div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- Contact Section -->
+

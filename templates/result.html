@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body style="background-image:url({%static 'images/lo.jpg' %})";>
+<style>
+    input{color:red;text-align:center;height:30px}
+    label{color:red}
+    h1{text-align:center}
+</style>
+<h1 style="color:yellow;">Login</h1>
+
+<form action="" method="POST">
+    <div class="login" style="width:500px; margin:0 auto;">
+
+    {% csrf_token %}
+    <label><b><h2>Username:</h2></b></label>
+    <input type="text" name="username" placeholder="Enter your username"><br>
+    <label><b><h2>Password:</h2></b></label>
+    <input type="password" name="password" placeholder="Enter your password"><br><br>
+       <input type="password" name="confirmpassword" placeholder="Enter your password again"><br><br>
+    <input type="submit">
+    </div>
+    </form>
+</body>
+</html>

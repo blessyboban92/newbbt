@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body style="background-image:url({% static 'img/intro-bg.jpg' %})";>
+<style>
+    input{color:red;text-align:center;height:30px}
+    label{color:red}
+    h1{text-align:center}
+</style>
+<h1 style="color:red;">Login</h1>
+<form action="" method="POST">
+    <div class="login" style="width:500px; margin:0 auto;">
+        {% csrf_token %}
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required><br>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+    </div>
+        <div>
+    <button type="submit">Login</button>
+        </div>
+<p>Don't have an account? <a href="/register">Register</a></p>
+</div>
+    {% if error %}
+<p>{{ error }}</p>
+{% endif %}
+</form>
+</body>
+</head>
+</html>
